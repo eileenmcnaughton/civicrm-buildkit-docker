@@ -1,4 +1,4 @@
-FROM php:7.3-apache-stretch
+FROM php:7.3-apache-buster
 
 # Install apt packages
 #
@@ -42,6 +42,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
   unzip \
   zip \
   libzip-dev \
+  vim \
   && rm -r /var/lib/apt/lists/*
 
 # Install php extensions (curl, json, mbstring, openssl, posix, phar
@@ -84,13 +85,11 @@ USER buildkit
 
 WORKDIR /buildkit
 
-ENV PATH="/buildkit/bin:${PATH}"
+ENV PATH="/buildkit/civicrm-buildkit/bin:${PATH}"
+# I think this line is not actually doing anything...
+ENV BLDDIR="/buildkit/build"
 
-RUN git clone https://github.com/civicrm/civicrm-buildkit.git buildkit-tmp
-
-RUN mv buildkit-tmp/* buildkit-tmp/.git* .
-
-RUN rmdir buildkit-tmp
+RUN git clone "https://gerrit.wikimedia.org/r/wikimedia/fundraising/crm/civicrm-buildkit" && (cd "civicrm-buildkit" && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg https://gerrit.wikimedia.org/r/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
 
 # Need to create this before we configure apache, otherwise it will complain
 RUN mkdir -p .amp/apache.d
@@ -103,6 +102,8 @@ RUN mkdir .drush
 
 RUN mkdir .npm
 
+RUN mkdir -p /buildkit/.civibuild/tmp
+
 RUN civi-download-tools
 
 RUN civibuild cache-warmup
@@ -111,13 +112,15 @@ COPY --chown=buildkit:buildkit amp.services.yml /buildkit/.amp/services.yml
 
 COPY buildkit.ini /usr/local/etc/php/conf.d/buildkit.ini
 
+COPY drupal.settings.d /etc/drupal.settings.d
+COPY civicrm.settings.d /etc/civicrm.settings.d
+COPY drush /etc/drush
+
 COPY msmtprc /etc/msmtprc
 
 COPY apache.conf /etc/apache2/conf-enabled/buildkit.conf
 
-RUN rm /buildkit/app/civicrm.settings.d/100-mail.php
-
-COPY civibuild.conf /buildkit/app/civibuild.conf
+COPY civibuild.conf /buildkit/civicrm-buildkit/app/civibuild.conf
 
 COPY apache24-vhost.php /buildkit/build/.amp/apache24-vhost.php
 
@@ -130,3 +133,4 @@ RUN chmod u+x /usr/local/bin/docker-civicrm-entrypoint
 ENTRYPOINT [ "docker-civicrm-entrypoint" ]
 
 CMD ["apache2-foreground"]
+

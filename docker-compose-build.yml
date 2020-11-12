@@ -6,7 +6,7 @@ services:
     build:
       context: civicrm
       args:
-        BUILDKIT_UID: 1001
+        BUILDKIT_UID: 1000
         # BUILDKIT_GID: 1001 # By default, this will be the same as the UID
     hostname: civicrm
     environment:
@@ -17,7 +17,7 @@ services:
     ports:
       - "7979:7979"
     volumes:
-      - buildkit:/buildkit
+      - ./buildkit:/buildkit/buildkit
       - ./build:/buildkit/build
       - ./extra:/extra
       - amp:/buildkit/.amp
@@ -56,7 +56,6 @@ services:
 
 volumes:
   amp:
-  buildkit:
   bower-cache:
   composer-cache:
   drush-cache:

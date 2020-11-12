@@ -1,3 +1,19 @@
+# WMF CiviCRM buildkit on Docker
+
+This is taken from https://github.com/michaelmcandrew/civicrm-buildkit-docker
+and with middling success I have tried to acheive the following changes
+
+|Change|Status|Primary reason|Upstreamable|
+|---|---|---|---|
+|Add Redis|image there - not wired in|WMF uses it|Recommended as more performant|
+|use MariaDB rather than mysql|working|WMF uses it|Recommended as more OpenSource|
+|Use WMF buildkit|working|WMF has a dependency that requires composer 1|Not recommended - resolve [T267881](https://phabricator.wikimedia.org/T267881) instead|
+|Fix the integrity of the civicrm-buildkit repo directory|working|The upstream version moves things around such that the git repo is not 'pure'|Recommended - for anyone who cares about maintaining buildkit too this matters|
+|Fix the build directory to be outside buildkit|working|This is part of making the buildkit directory a proper repo again|Recommend upstreaming|
+|Fix the civicrm-buildkit directory to be a bind rather than a volume|Tried & failed :-(|This allows code to be managed on the client system - useful in dev|Recommended|
+|Fix civix to run from git repo code rather than phar|Not attempted yet|Assists with developing civix|Recommended|
+|Run civibuild commands at the end of the docker-compose|Tried and failed|Gives WMF staff same site set up|Not recommended
+
 # CiviCRM buildkit on Docker
 
 CiviCRM buildkit on Docker is primarily built for development. It may also be useful for hosting. Contributions welcome.
@@ -165,3 +181,8 @@ Contributions to this repository are very welcome. Feel free to submit a pull re
 ## License
 
 This extension is licensed under [AGPL-3.0](LICENSE).
+
+WMF recommendation
+
+docker-compose exec -u buildkit civicrm civibuild create wmff --admin-pass admin
+docker-compose exec -u buildkit civicrm civibuild create dmaster --admin-pass admin

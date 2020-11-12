@@ -1,19 +1,27 @@
 version: "3.6"
 services:
+
   civicrm:
-    image: michaelmcandrew/civicrm-buildkit
+    build:
+      context: publish/civicrm/php7.3
+      args:
+        BUILDKIT_UID: 1000
+        # BUILDKIT_GID: 1001 # By default, this will be the same as the UID
     hostname: civicrm
     environment:
       TERM: xterm-color
       APACHE_RUN_USER: buildkit
     links:
-      - mysql
+      - database
+      - redis
+    depends_on: [database]
     ports:
       - "7979:7979"
     volumes:
-      - buildkit:/buildkit
+      - buildkit:/buildkit/civicrm-buildkit
       - ./build:/buildkit/build
       - ./extra:/extra
+      - drupal-settings /etc/drupal-settings.d
       - amp:/buildkit/.amp
       - bower-cache:/buildkit/.cache/bower
       - composer-cache:/buildkit/.composer
@@ -21,10 +29,13 @@ services:
       - npm-cache:/buildkit/.npm
       - git-cache:/buildkit/app/tmp/git-cache
     restart: unless-stopped
-  mysql:
-    image: mysql:5.7
+
+  database:
+    image: mariadb:10.4
+    container_name: database
     environment:
       MYSQL_ROOT_PASSWORD: buildkit
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes:
       - mysql:/var/lib/mysql
     restart: unless-stopped
@@ -34,7 +45,7 @@ services:
     ports:
       - "8081:80"
     links:
-      - mysql
+      - database
     environment:
       PMA_HOST: mysql
       PMA_USER: root
@@ -47,12 +58,23 @@ services:
       - "8082:80"
     restart: unless-stopped
 
+  redis:
+    image: redis:5.0-buster
+    container_name: redis
+
+    volumes:
+      - qdata/:/data
+
+    command: [ "redis-server", "--appendonly", "yes" ]
+
 volumes:
   amp:
-  buildkit:
   bower-cache:
   composer-cache:
   drush-cache:
   git-cache:
   npm-cache:
   mysql:
+  qdata:
+  buildkit:
+  drupal-settings:

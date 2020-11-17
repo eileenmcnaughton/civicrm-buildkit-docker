@@ -14,6 +14,15 @@ and with middling success I have tried to acheive the following changes
 |Fix civix to run from git repo code rather than phar|Not attempted yet|Assists with developing civix|Recommended|
 |Run civibuild commands at the end of the docker-compose|Tried and failed|Gives WMF staff same site set up|Not recommended
 
+WMF recommendation
+
+To get set up ...
+```
+docker-compose up -d
+docker-compose exec -u buildkit civicrm civibuild create wmff --admin-pass admin
+docker-compose exec -u buildkit civicrm civibuild create dmaster --admin-pass admin
+```
+
 # CiviCRM buildkit on Docker
 
 CiviCRM buildkit on Docker is primarily built for development. It may also be useful for hosting. Contributions welcome.
@@ -181,8 +190,3 @@ Contributions to this repository are very welcome. Feel free to submit a pull re
 ## License
 
 This extension is licensed under [AGPL-3.0](LICENSE).
-
-WMF recommendation
-
-docker-compose exec -u buildkit civicrm civibuild create wmff --admin-pass admin
-docker-compose exec -u buildkit civicrm civibuild create dmaster --admin-pass admin

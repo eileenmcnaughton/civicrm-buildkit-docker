@@ -16,6 +16,8 @@ and with middling success I have tried to acheive the following changes
 
 WMF recommendation
 
+PHP storm required extensions - add these first
+1) 
 To get set up ...
 ```
 docker-compose up -d
@@ -28,6 +30,9 @@ http://wmff.localhost:7979
 http://dmaster.localhost:7979
 mysql will work on
 mysql -uroot -h127.0.0.1 -pbuildkit -P33306
+
+**Getting phpstorm right!**
+1) ensure you have the following 
 
 
 -------------

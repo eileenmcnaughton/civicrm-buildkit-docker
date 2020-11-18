@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="civicrm" uuid="37d1cf07-3893-498d-b9f4-94b0b763c6d9">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://localhost:33306/civicrm</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="drupal" uuid="4fe15b04-c59e-4ae1-87e9-e30d6989420e">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://localhost:33306/drupal</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="wmff_test" uuid="349d0b17-0490-49ce-94d0-d2671f3334e0">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://localhost:33306/wmff_test</jdbc-url>
+    </data-source>
+  </component>
+</project>

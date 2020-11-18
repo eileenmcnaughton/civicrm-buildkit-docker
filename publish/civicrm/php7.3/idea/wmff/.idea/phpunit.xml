@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PHPUnit">
+    <option name="directories">
+      <list>
+        <option value="$PROJECT_DIR$/sites/default/civicrm/extensions/wmf-civicrm/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/large_donation/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/offline2civicrm/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/exchange_rates/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/metrics_reporting/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/orphan_slayer/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/queue2civicrm/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/thank_you/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/wmf_audit/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/wmf_campaigns/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/wmf_civicrm/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/wmf_common/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/wmf_communication/tests" />
+        <option value="$PROJECT_DIR$/sites/all/modules/wmf_eoy_receipt/tests" />
+        <option value="$PROJECT_DIR$/sites/default/civicrm/extensions/org.wikimedia.omnimail/tests" />
+        <option value="$PROJECT_DIR$/sites/default/civicrm/extensions/org.wikimedia.contacteditor/tests" />
+        <option value="$PROJECT_DIR$/sites/default/civicrm/extensions/org.wikimedia.geocoder/tests" />
+        <option value="$PROJECT_DIR$/sites/default/civicrm/extensions/org.wikimedia.forgetme/tests" />
+        <option value="$PROJECT_DIR$/sites/default/civicrm/extensions/org.wikimedia.smashpig/tests" />
+        <option value="$PROJECT_DIR$/sites/default/civicrm/extensions/deduper/tests" />
+        <option value="$PROJECT_DIR$/sites/default/civicrm/extensions/org.wikimedia.datachecks/tests" />
+        <option value="$PROJECT_DIR$/sites/default/civicrm/extensions/Email-Amender/tests" />
+        <option value="$PROJECT_DIR$/sites/default/civicrm/extensions/wmf-thankyou/tests" />
+        <option value="$PROJECT_DIR$/sites/default/civicrm/extensions/matching-gifts/tests" />
+        <option value="$PROJECT_DIR$/sites/default/civicrm/extensions/civi-data-translate/tests" />
+      </list>
+    </option>
+  </component>
+</project>

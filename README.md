@@ -23,6 +23,16 @@ docker-compose exec -u buildkit civicrm civibuild create wmff --admin-pass admin
 docker-compose exec -u buildkit civicrm civibuild create dmaster --admin-pass admin
 ```
 
+You will then have 2 sites
+http://wmff.localhost:7979
+http://dmaster.localhost:7979
+mysql will work on
+mysql -uroot -h127.0.0.1 -pbuildkit -P33306
+
+
+-------------
+Below is from origin forked repo.
+
 # CiviCRM buildkit on Docker
 
 CiviCRM buildkit on Docker is primarily built for development. It may also be useful for hosting. Contributions welcome.

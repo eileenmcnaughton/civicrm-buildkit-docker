@@ -16,6 +16,10 @@ and with middling success I have tried to acheive the following changes
 
 *WMF recommendation*
 
+The follow attempts to get phpstorm xdebug & phpunit set up as well as docker
+The docker part works well - phpstorm tbd if it's transferable or we
+just need more screenshots & tips.
+
 PHP storm preparation 
  if you get the plugins right first it might help
 
@@ -59,12 +63,31 @@ the databases *should* be configured in the IDE
 you should be able to access sites using aliases with drush ie
 drush @wmff up
 drush @dmaster up
+Note the projects are intended to be
+1) opened from wmff dir for wmf project
+2) opened from civicrm modules dir for dmaster site/civicrm project
 
 PHPstorm screenshots
 ![docker-compose](docker-compose.png)
 
-**Getting phpstorm right!**
-1) ensure you have the following 
+On the dmaster (civicrm) project you need to edit the template for 
+phpunit tests such that it has the preferred interpreter and enviroment
+variables.
+![phpunit](phpunit.png)
+
+On the dmaster (civicrm) project you need to disable stopping when the
+path is not mapped or outside the project
+![xdebug-civi](xdebugforcivicrm.png)
+
+The trick to getting it debugging to work in this repo that is NOT the
+webroot is somewhat explained in 
+https://www.jetbrains.com/help/phpstorm/creating-a-php-debug-server-configuration.html
+
+- in short
+1) you need an in-place a server config and a deployment config is not
+enough
+
+
 
 
 -------------

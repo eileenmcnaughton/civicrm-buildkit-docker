@@ -1,0 +1,36 @@
+'/buildkit/build/dmaster/web::cms':
+    name: cms
+    dsn: 'mysql://dmastercms:dmastercms@database:3306/dmastercms?new_link=true'
+    root: /buildkit/build/dmaster/web
+    url: 'http://dmaster.localhost:7979'
+    visibility: null
+'/buildkit/build/dmaster/web::civi':
+    name: civi
+    dsn: 'mysql://dmastercivicrm:dmastercivicrm@database:3306/dmastercivicrm_2pdlu?new_link=true'
+    root: /buildkit/build/dmaster/web
+    url: null
+    visibility: null
+'/buildkit/build/dmaster/web::test':
+    name: test
+    dsn: 'mysql://dmastertest:dmastertest@database:3306/dmastertest?new_link=true'
+    root: /buildkit/build/dmaster/web
+    url: null
+    visibility: null
+'/buildkit/build/wmff/drupal::cms':
+    name: cms
+    dsn: 'mysql://drupal:drupal@database:3306/drupal?new_link=true'
+    root: /buildkit/build/wmff/drupal
+    url: 'http://wmff.localhost:7979'
+    visibility: null
+'/buildkit/build/wmff/drupal::civi':
+    name: civi
+    dsn: 'mysql://civicrm:civicrm@database:3306/civicrm?new_link=true'
+    root: /buildkit/build/wmff/drupal
+    url: null
+    visibility: null
+'/buildkit/build/wmff/drupal::test':
+    name: test
+    dsn: 'mysql://wmff_test:wmff_test@database:3306/wmff_test?new_link=true'
+    root: /buildkit/build/wmff/drupal
+    url: null
+    visibility: null

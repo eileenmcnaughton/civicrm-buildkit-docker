@@ -38,6 +38,8 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes:
       - mysql:/var/lib/mysql
+    ports:
+      - "33306:3306"
     restart: unless-stopped
 
   phpmyadmin:

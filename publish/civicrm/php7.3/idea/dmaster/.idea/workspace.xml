@@ -17,6 +17,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" xdebug_force_break_when_no_path_mapping="false" xdebug_force_break_when_outside_project="false" />
+  <component name="PhpServers">
+    <servers>
+      <server deployment_server="5079a70a-6e46-4b6b-a0bb-ac9123da7616" host="dmaster.localhost" id="5bf562ac-707b-4fcb-86a4-962b59cd85b0" name="dmaster" port="7979" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="/buildkit/build/dmaster/web/sites/all/modules/civicrm" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="civicrm-docker-compose">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
@@ -100,11 +110,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/phpunit.xml.dist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="settings.editor.selected.configurable" value="settings.php.debug.servers" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -119,6 +129,23 @@
       <TestRunner />
       <method v="2" />
     </configuration>
+    <configuration name="api_v3_ACLCachingTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="civicrm-docker-compose" />
+        </PhpTestInterpreterSettings>
+        <envs>
+          <env name="CIVICRM_UF" value="UnitTests" />
+        </envs>
+      </CommandLine>
+      <TestRunner class="api_v3_ACLCachingTest" configuration_file="/buildkit/build/dmaster/web/sites/all/modules/civicrm/phpunit.xml.dist" file="$PROJECT_DIR$/tests/phpunit/api/v3/ACLCachingTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.api_v3_ACLCachingTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -128,7 +155,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605692703947</updated>
-      <workItem from="1605692705191" duration="1571000" />
+      <workItem from="1605692705191" duration="4286000" />
     </task>
     <servers />
   </component>
@@ -137,14 +164,22 @@
       <screen x="72" y="27" width="1208" height="693" />
     </state>
     <state x="262" y="22" width="907" height="696" key="#CLI_Interpreters/72.27.1208.693@72.27.1208.693" timestamp="1605692909495" />
+    <state x="272" y="22" width="867" height="689" key="#Deployment" timestamp="1605696701585">
+      <screen x="72" y="27" width="1208" height="693" />
+    </state>
+    <state x="272" y="22" width="867" height="689" key="#Deployment/72.27.1208.693@72.27.1208.693" timestamp="1605696701585" />
     <state x="262" y="22" width="920" height="696" key="#Test_Frameworks" timestamp="1605694142674">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
     <state x="262" y="22" width="920" height="696" key="#Test_Frameworks/72.27.1208.693@72.27.1208.693" timestamp="1605694142674" />
-    <state x="138" y="22" width="1003" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605694276087">
+    <state x="138" y="22" width="1003" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605694477491">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state x="138" y="22" width="1003" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1208.693@72.27.1208.693" timestamp="1605694276087" />
+    <state x="138" y="22" width="1003" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1208.693@72.27.1208.693" timestamp="1605694477491" />
+    <state x="204" y="198" width="935" height="363" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#" timestamp="1605695158492">
+      <screen x="72" y="27" width="1208" height="693" />
+    </state>
+    <state x="204" y="198" width="935" height="363" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/72.27.1208.693@72.27.1208.693" timestamp="1605695158492" />
     <state x="370" y="249" width="687" height="260" key="DockerComposeFileDialog" timestamp="1605692869843">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
@@ -153,53 +188,64 @@
       <screen x="72" y="27" width="1208" height="693" />
     </state>
     <state x="483" y="125" width="308" height="500" key="EnvironmentVariablesDialog/72.27.1208.693@72.27.1208.693" timestamp="1605694224725" />
-    <state x="462" y="119" width="424" height="496" key="FileChooserDialogImpl" timestamp="1605693267911">
+    <state x="462" y="99" width="424" height="496" key="FileChooserDialogImpl" timestamp="1605696091002">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state x="462" y="119" width="424" height="496" key="FileChooserDialogImpl/72.27.1208.693@72.27.1208.693" timestamp="1605693267911" />
-    <state width="1162" height="196" key="GridCell.Tab.0.bottom" timestamp="1605694149529">
+    <state x="462" y="99" width="424" height="496" key="FileChooserDialogImpl/72.27.1208.693@72.27.1208.693" timestamp="1605696091002" />
+    <state width="1162" height="196" key="GridCell.Tab.0.bottom" timestamp="1605695281496">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state width="1162" height="196" key="GridCell.Tab.0.bottom/72.27.1208.693@72.27.1208.693" timestamp="1605694149529" />
-    <state width="1162" height="196" key="GridCell.Tab.0.center" timestamp="1605694149529">
+    <state width="1162" height="196" key="GridCell.Tab.0.bottom/72.27.1208.693@72.27.1208.693" timestamp="1605695281496" />
+    <state width="1162" height="196" key="GridCell.Tab.0.center" timestamp="1605695281494">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state width="1162" height="196" key="GridCell.Tab.0.center/72.27.1208.693@72.27.1208.693" timestamp="1605694149529" />
-    <state width="1162" height="196" key="GridCell.Tab.0.left" timestamp="1605694149529">
+    <state width="1162" height="196" key="GridCell.Tab.0.center/72.27.1208.693@72.27.1208.693" timestamp="1605695281494" />
+    <state width="1162" height="196" key="GridCell.Tab.0.left" timestamp="1605695281493">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state width="1162" height="196" key="GridCell.Tab.0.left/72.27.1208.693@72.27.1208.693" timestamp="1605694149529" />
-    <state width="1162" height="196" key="GridCell.Tab.0.right" timestamp="1605694149529">
+    <state width="1162" height="196" key="GridCell.Tab.0.left/72.27.1208.693@72.27.1208.693" timestamp="1605695281493" />
+    <state width="1162" height="196" key="GridCell.Tab.0.right" timestamp="1605695281495">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state width="1162" height="196" key="GridCell.Tab.0.right/72.27.1208.693@72.27.1208.693" timestamp="1605694149529" />
-    <state width="1162" height="196" key="GridCell.Tab.1.bottom" timestamp="1605694149458">
+    <state width="1162" height="196" key="GridCell.Tab.0.right/72.27.1208.693@72.27.1208.693" timestamp="1605695281495" />
+    <state width="1162" height="196" key="GridCell.Tab.1.bottom" timestamp="1605695282789">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state width="1162" height="196" key="GridCell.Tab.1.bottom/72.27.1208.693@72.27.1208.693" timestamp="1605694149458" />
-    <state width="1162" height="196" key="GridCell.Tab.1.center" timestamp="1605694149458">
+    <state width="1162" height="196" key="GridCell.Tab.1.bottom/72.27.1208.693@72.27.1208.693" timestamp="1605695282789" />
+    <state width="1162" height="196" key="GridCell.Tab.1.center" timestamp="1605695282787">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state width="1162" height="196" key="GridCell.Tab.1.center/72.27.1208.693@72.27.1208.693" timestamp="1605694149458" />
-    <state width="1162" height="196" key="GridCell.Tab.1.left" timestamp="1605694149458">
+    <state width="1162" height="196" key="GridCell.Tab.1.center/72.27.1208.693@72.27.1208.693" timestamp="1605695282787" />
+    <state width="1162" height="196" key="GridCell.Tab.1.left" timestamp="1605695282787">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state width="1162" height="196" key="GridCell.Tab.1.left/72.27.1208.693@72.27.1208.693" timestamp="1605694149458" />
-    <state width="1162" height="196" key="GridCell.Tab.1.right" timestamp="1605694149458">
+    <state width="1162" height="196" key="GridCell.Tab.1.left/72.27.1208.693@72.27.1208.693" timestamp="1605695282787" />
+    <state width="1162" height="196" key="GridCell.Tab.1.right" timestamp="1605695282788">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state width="1162" height="196" key="GridCell.Tab.1.right/72.27.1208.693@72.27.1208.693" timestamp="1605694149458" />
-    <state x="162" y="22" width="1024" height="698" key="SettingsEditor" timestamp="1605694241290">
+    <state width="1162" height="196" key="GridCell.Tab.1.right/72.27.1208.693@72.27.1208.693" timestamp="1605695282788" />
+    <state x="162" y="22" width="1106" height="698" key="SettingsEditor" timestamp="1605696992920">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state x="162" y="22" width="1024" height="698" key="SettingsEditor/72.27.1208.693@72.27.1208.693" timestamp="1605694241290" />
-    <state x="440" y="261" width="467" height="222" key="com.jetbrains.plugins.remotesdk.ui.RemoteMappingsConfiguration" timestamp="1605693286204">
+    <state x="162" y="22" width="1106" height="698" key="SettingsEditor/72.27.1208.693@72.27.1208.693" timestamp="1605696992920" />
+    <state x="440" y="256" width="467" height="222" key="com.jetbrains.plugins.remotesdk.ui.RemoteMappingsConfiguration" timestamp="1605694764208">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state x="440" y="261" width="467" height="222" key="com.jetbrains.plugins.remotesdk.ui.RemoteMappingsConfiguration/72.27.1208.693@72.27.1208.693" timestamp="1605693286204" />
-    <state x="339" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1605693219975">
+    <state x="440" y="256" width="467" height="222" key="com.jetbrains.plugins.remotesdk.ui.RemoteMappingsConfiguration/72.27.1208.693@72.27.1208.693" timestamp="1605694764208" />
+    <state x="339" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1605694686239">
       <screen x="72" y="27" width="1208" height="693" />
     </state>
-    <state x="339" y="41" width="672" height="678" key="search.everywhere.popup/72.27.1208.693@72.27.1208.693" timestamp="1605693219975" />
+    <state x="339" y="41" width="672" height="678" key="search.everywhere.popup/72.27.1208.693@72.27.1208.693" timestamp="1605694686239" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/CRM/Core/Invoke.php</url>
+          <line>67</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

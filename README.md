@@ -84,10 +84,31 @@ webroot is somewhat explained in
 https://www.jetbrains.com/help/phpstorm/creating-a-php-debug-server-configuration.html
 
 - in short
-1) you need an in-place a server config and a deployment config is not
-enough
+you need an in-place a server config and a deployment config is not
+enough - possibly the server config IS enough - I created a deployment config & then
+imported to server config.
+
+The deployment config looks like this - note the path is on the server
+![deploy config](deployment_config.png)
+
+And the mapping screen is configured like this
+![mapping deploy](deploy_mapping.png)
+
+The import from deployment is via this button
+![import button](import_button.png)
+
+looks like
+![import from deploy](importfromdeploy.png)
 
 
+Gotchas
+- unexpected references to /opt/project when running tests could be
+because of the python plugin being installed. This dir (on the container) holds
+some phpunit files - but not the test files
+- references to the php result printer during tests could be the
+phpversion - possibly the wrong one is picked up. The snap version of
+docker compose can be a culprit here. Delete files from /opt/project/ on
+the docker container. Make sure docker-composer path is not snap.
 
 
 -------------

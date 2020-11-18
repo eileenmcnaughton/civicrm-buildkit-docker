@@ -5,7 +5,7 @@
       <paths name="dmaster">
         <serverdata>
           <mappings>
-            <mapping deploy="web/sites/all/modules/civicrm" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

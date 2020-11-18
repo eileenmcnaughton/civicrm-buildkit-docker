@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="d939c5ec-0cc9-4d62-8d4f-3c37148b67f6" name="dmaster" url="http://dmaster/localhost:7979">
-        <fileTransfer mountedRoot="$PROJECT_DIR$" accessType="MOUNT" port="0" />
+      <webServer id="5079a70a-6e46-4b6b-a0bb-ac9123da7616" name="dmaster" url="http://dmaster.localhost:7979">
+        <fileTransfer mountedRoot="/buildkit/build/dmaster/web/sites/all/modules/civicrm" accessType="MOUNT" port="0" />
       </webServer>
     </option>
   </component>

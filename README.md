@@ -14,22 +14,54 @@ and with middling success I have tried to acheive the following changes
 |Fix civix to run from git repo code rather than phar|Not attempted yet|Assists with developing civix|Recommended|
 |Run civibuild commands at the end of the docker-compose|Tried and failed|Gives WMF staff same site set up|Not recommended
 
-WMF recommendation
+*WMF recommendation*
 
-PHP storm required extensions - add these first
-1) 
+PHP storm preparation 
+ if you get the plugins right first it might help
+
+1) docker-compose - make sure the path does not have snap in it
+- you must install docker through the method on the website
+as the snap version doesn't work right with phpunit
+2) don't install the python plugin - can break phpunit
+ - here is my installed list
+ BashSupport
+ IntellijIRC
+ PHPUnit code coverage
+ com.jetbrains.codeWithMe
+ com.jetbrains.php
+ com.jetbrains.php.drupal
+ com.jetbrains.php.framework
+ com.jetbrains.plugins.ini4idea
+ com.kalessil.phpStorm.phpInspectionsEA
+ com.neon.intellij.plugins.gitlab
+ com.urswolfer.intellij.plugin.gerrit
+ de.espend.idea.php.annotation
+ de.espend.idea.php.phpunit
+ org.jetbrains.plugins.phpstorm-docker
+ org.jetbrains.plugins.phpstorm-remote-interpreter
+
 To get set up ...
 ```
 docker-compose up -d
 docker-compose exec -u buildkit civicrm civibuild create wmff --admin-pass admin
 docker-compose exec -u buildkit civicrm civibuild create dmaster --admin-pass admin
+#experimental.
+cp -r publish/civicrm/php7.3/idea/wmff/.idea build/wmff/
+cp -r publish/civicrm/php7.3/idea/dmaster/.idea build/dmaster/web/sites/all/modules/civicrm/
 ```
 
-You will then have 2 sites
+You will then have 2 sites (user name & password is demo/demo or admin/admin)
 http://wmff.localhost:7979
 http://dmaster.localhost:7979
 mysql will work on
 mysql -uroot -h127.0.0.1 -pbuildkit -P33306
+the databases *should* be configured in the IDE
+you should be able to access sites using aliases with drush ie
+drush @wmff up
+drush @dmaster up
+
+PHPstorm screenshots
+![docker-compose](docker-compose.png)
 
 **Getting phpstorm right!**
 1) ensure you have the following 

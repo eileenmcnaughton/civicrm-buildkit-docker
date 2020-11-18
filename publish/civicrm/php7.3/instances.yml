@@ -6,7 +6,7 @@
     visibility: null
 '/buildkit/build/dmaster/web::civi':
     name: civi
-    dsn: 'mysql://dmastercivicrm:dmastercivicrm@database:3306/dmastercivicrm_2pdlu?new_link=true'
+    dsn: 'mysql://dmastercivicrm:dmastercivicrm@database:3306/dmastercivicrm?new_link=true'
     root: /buildkit/build/dmaster/web
     url: null
     visibility: null

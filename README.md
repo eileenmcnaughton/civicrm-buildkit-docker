@@ -52,8 +52,13 @@ docker-compose exec -u buildkit civicrm civibuild create dmaster --admin-pass ad
 #experimental.
 cp -r publish/civicrm/php7.3/idea/wmff/.idea build/wmff/
 cp -r publish/civicrm/php7.3/idea/dmaster/.idea build/dmaster/web/sites/all/modules/civicrm/
-```
 
+```
+This creates a useful exec alias - note it uses the path I have (ie. with the 
+dev - we should script to be dynamic)
+```
+echo "alias bkb='docker-compose --file $HOME/dev/civicrm-buildkit-docker/docker-compose.yml exec -u buildkit civicrm bash'" >> ~/.bash_aliases && source ~/.bash_aliases
+```
 You will then have 2 sites (user name & password is demo/demo or admin/admin)
 http://wmff.localhost:7979
 http://dmaster.localhost:7979

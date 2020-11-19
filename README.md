@@ -50,10 +50,15 @@ docker-compose up -d
 docker-compose exec -u buildkit civicrm civibuild create wmff --admin-pass admin
 docker-compose exec -u buildkit civicrm civibuild create dmaster --admin-pass admin
 #add config for civiProxy - also need to figure out how & when to git clone it.
-docker-compose exec -u buildkit civicrm amp create -r /buildkit/build/CiviProxy/proxy --name civiproxy --skip-db --url http://civiproxy.localhost:8000 --prefix CP
+docker-compose exec -u buildkit civicrm amp create -r /buildkit/build/CiviProxy/proxy --name civiproxy --skip-db --url https://civiproxy.localhost:8000 --prefix CP
 #experimental.
 cp -r publish/civicrm/php7.3/idea/wmff/dotidea build/wmff/.idea
 cp -r publish/civicrm/php7.3/idea/dmaster/dotidea build/dmaster/web/sites/all/modules/civicrm/.idea
+
+# for https using nginx - see https://blog.dcycle.com/blog/2018-10-27/local-https-docker-compose/
+ docker-compose exec nginx-proxy bash -c "cd /etc/nginx/certs && openssl req -x509 -out dmaster.localhost.crt -keyout dmaster.localhost.key -newkey rsa:2048 -nodes -sha256 -subj '/CN=localhost' -extensions EXT -config <(printf "'"'"[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:dmaster.localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth"'"'")"
+ docker-compose exec nginx-proxy bash -c "cd /etc/nginx/certs && openssl req -x509 -out wmff.localhost.crt -keyout wmff.localhost.key -newkey rsa:2048 -nodes -sha256 -subj '/CN=localhost' -extensions EXT -config <(printf "'"'"[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:wmff.localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth"'"'")"
+ docker-compose exec nginx-proxy bash -c "cd /etc/nginx/certs && openssl req -x509 -out civiproxy.localhost.crt -keyout civiproxy.localhost.key -newkey rsa:2048 -nodes -sha256 -subj '/CN=localhost' -extensions EXT -config <(printf "'"'"[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:civiproxy.localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth"'"'")"
 
 ```
 This creates a useful exec alias - note it uses the path I have (ie. with the 

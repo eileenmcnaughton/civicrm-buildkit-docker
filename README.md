@@ -85,6 +85,9 @@ phpunit tests such that it has the preferred interpreter and enviroment
 variables.
 ![phpunit](screenshots/phpunit.png)
 
+The interpreter is configured to look in wmff as there is no phpunit in dmaster
+![phpunit-cli](screenshots/phpunitconfig.png)
+
 On the dmaster (civicrm) project you need to disable stopping when the
 path is not mapped or outside the project
 ![xdebug-civi](screenshots/xdebugforcivicrm.png)

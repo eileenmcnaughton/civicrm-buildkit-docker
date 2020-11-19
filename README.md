@@ -78,16 +78,16 @@ Note the projects are intended to be
 2) opened from civicrm modules dir for dmaster site/civicrm project
 
 PHPstorm screenshots
-![docker-compose](docker-compose.png)
+![docker-compose](screenshots/docker-compose.png)
 
 On the dmaster (civicrm) project you need to edit the template for 
 phpunit tests such that it has the preferred interpreter and enviroment
 variables.
-![phpunit](phpunit.png)
+![phpunit](screenshots/phpunit.png)
 
 On the dmaster (civicrm) project you need to disable stopping when the
 path is not mapped or outside the project
-![xdebug-civi](xdebugforcivicrm.png)
+![xdebug-civi](screenshots/xdebugforcivicrm.png)
 
 The trick to getting it debugging to work in this repo that is NOT the
 webroot is somewhat explained in 
@@ -99,16 +99,16 @@ enough - possibly the server config IS enough - I created a deployment config & 
 imported to server config.
 
 The deployment config looks like this - note the path is on the server
-![deploy config](deployment_config.png)
+![deploy config](screenshots/deployment_config.png)
 
 And the mapping screen is configured like this
-![mapping deploy](deploy_mapping.png)
+![mapping deploy](screenshots/deploy_mapping.png)
 
 The import from deployment is via this button
-![import button](import_button.png)
+![import button](screenshots/import_button.png)
 
 looks like
-![import from deploy](importfromdeploy.png)
+![import from deploy](screenshots/importfromdeploy.png)
 
 
 Gotchas

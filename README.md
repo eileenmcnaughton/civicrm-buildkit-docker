@@ -49,15 +49,20 @@ To get set up ...
 docker-compose up -d
 docker-compose exec -u buildkit civicrm civibuild create wmff --admin-pass admin
 docker-compose exec -u buildkit civicrm civibuild create dmaster --admin-pass admin
+#add config for civiProxy - also need to figure out how & when to git clone it.
+docker-compose exec -u buildkit civicrm amp create -r /buildkit/build/CiviProxy/proxy --name civiproxy --skip-db --url http://civiproxy.localhost:8000 --prefix CP
 #experimental.
-cp -r publish/civicrm/php7.3/idea/wmff/.idea build/wmff/
-cp -r publish/civicrm/php7.3/idea/dmaster/.idea build/dmaster/web/sites/all/modules/civicrm/
+cp -r publish/civicrm/php7.3/idea/wmff/dotidea build/wmff/.idea
+cp -r publish/civicrm/php7.3/idea/dmaster/dotidea build/dmaster/web/sites/all/modules/civicrm/.idea
 
 ```
 This creates a useful exec alias - note it uses the path I have (ie. with the 
 dev - we should script to be dynamic)
 ```
 echo "alias bkb='docker-compose --file $HOME/dev/civicrm-buildkit-docker/docker-compose.yml exec -u buildkit civicrm bash'" >> ~/.bash_aliases && source ~/.bash_aliases
+echo "alias bkd='docker-compose --file $HOME/dev/civicrm-buildkit-docker/docker-compose.yml down'" >> ~/.bash_aliases && source ~/.bash_aliases && source ~/.bash_aliases
+echo "alias bku='docker-compose --file $HOME/dev/civicrm-buildkit-docker/docker-compose.yml up -d'" >> ~/.bash_aliases && source ~/.bash_aliases && source ~/.bash_aliases
+
 ```
 You will then have 2 sites (user name & password is demo/demo or admin/admin)
 http://wmff.localhost:7979

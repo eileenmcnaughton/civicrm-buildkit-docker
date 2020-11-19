@@ -43,6 +43,10 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
   zip \
   libzip-dev \
   vim \
+  nano \
+  less \
+  openssh-server \
+
   && rm -r /var/lib/apt/lists/*
 
 # Install php extensions (curl, json, mbstring, openssl, posix, phar
@@ -122,11 +126,15 @@ COPY apache.conf /etc/apache2/conf-enabled/buildkit.conf
 
 COPY civibuild.conf /buildkit/civicrm-buildkit/app/civibuild.conf
 
+# Hard code our db names so we can share mapping config &
+# silverpop scripts are easy to run.
+COPY instances.yml /buildkit/.amp/instances.yml
+
 COPY apache24-vhost.php /buildkit/build/.amp/apache24-vhost.php
 
 USER root
 
-COPY ./docker-civicrm-entrypoint /usr/local/bin
+COPY docker-civicrm-entrypoint /usr/local/bin
 
 RUN chmod u+x /usr/local/bin/docker-civicrm-entrypoint
 

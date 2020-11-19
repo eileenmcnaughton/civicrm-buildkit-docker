@@ -3,7 +3,7 @@ services:
 
   civicrm:
     build:
-      context: publish/civicrm/php7.3
+      context: civicrm
       args:
         BUILDKIT_UID: 1000
         # BUILDKIT_GID: 1001 # By default, this will be the same as the UID
@@ -17,6 +17,7 @@ services:
     depends_on: [database]
     ports:
       - "7979:7979"
+      - "8000:8000"
     volumes:
       - buildkit:/buildkit/civicrm-buildkit
       - ./build:/buildkit/build

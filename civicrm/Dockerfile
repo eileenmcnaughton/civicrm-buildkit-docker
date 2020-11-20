@@ -116,8 +116,8 @@ COPY --chown=buildkit:buildkit amp.services.yml /buildkit/.amp/services.yml
 
 COPY buildkit.ini /usr/local/etc/php/conf.d/buildkit.ini
 
-COPY drupal.settings.d /etc/drupal.settings.d
-COPY civicrm.settings.d /etc/civicrm.settings.d
+COPY drupal-settings /etc/drupal.settings.d
+COPY civicrm-settings /etc/civicrm.settings.d
 COPY drush /etc/drush
 
 COPY msmtprc /etc/msmtprc

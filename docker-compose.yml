@@ -22,7 +22,8 @@ services:
       - buildkit:/buildkit/civicrm-buildkit
       - ./build:/buildkit/build
       - ./extra:/extra
-      - drupal-settings /etc/drupal-settings.d
+      - ./drupal-settings /etc/drupal-settings.d
+      - ./civicrm-settings /etc/civicrm-settings.d
       - amp:/buildkit/.amp
       - bower-cache:/buildkit/.cache/bower
       - composer-cache:/buildkit/.composer

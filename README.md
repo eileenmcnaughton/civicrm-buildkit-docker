@@ -49,9 +49,6 @@ To get set up ...
 docker-compose up -d
 docker-compose exec -u buildkit civicrm civibuild create wmff --admin-pass admin
 docker-compose exec -u buildkit civicrm civibuild create dmaster --admin-pass admin
-#add config for civiProxy - also need to figure out how & when to git clone it.
-docker-compose exec -u buildkit civicrm amp create -r /buildkit/build/CiviProxy/proxy --name civiproxy --skip-db --url http://civiproxy.localhost:8000 --prefix CP
-#experimental.
 cp -r publish/civicrm/php7.3/idea/wmff/dotidea build/wmff/.idea
 cp -r publish/civicrm/php7.3/idea/dmaster/dotidea build/dmaster/web/sites/all/modules/civicrm/.idea
 

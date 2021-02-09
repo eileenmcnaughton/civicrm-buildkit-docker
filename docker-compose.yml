@@ -25,11 +25,6 @@ services:
       - ./drupal-settings:/etc/drupal-settings.d
       - ./civicrm-settings:/etc/civicrm-settings.d
       - amp:/buildkit/.amp
-      - bower-cache:/buildkit/.cache/bower
-      - composer-cache:/buildkit/.composer
-      - drush-cache:/buildkit/.drush
-      - npm-cache:/buildkit/.npm
-      - git-cache:/buildkit/app/tmp/git-cache
     restart: unless-stopped
 
   database:
@@ -61,11 +56,6 @@ services:
 
 volumes:
   amp:
-  bower-cache:
-  composer-cache:
-  drush-cache:
-  git-cache:
-  npm-cache:
   mysql:
   qdata:
   buildkit:

@@ -90,7 +90,7 @@ USER buildkit
 WORKDIR /buildkit
 
 ENV PATH="/buildkit/civicrm-buildkit/bin:${PATH}"
-# I think this line is not actually doing anything...
+# I think this line is not actually doing anything... see civibuild.conf
 ENV BLDDIR="/buildkit/build"
 
 RUN git clone "https://gerrit.wikimedia.org/r/wikimedia/fundraising/crm/civicrm-buildkit" && (cd "civicrm-buildkit" && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg https://gerrit.wikimedia.org/r/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)

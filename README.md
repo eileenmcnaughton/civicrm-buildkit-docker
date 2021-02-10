@@ -49,8 +49,8 @@ To get set up ...
 docker-compose up -d
 docker-compose exec -u buildkit civicrm civibuild create wmff --admin-pass admin
 docker-compose exec -u buildkit civicrm civibuild create dmaster --admin-pass admin
-cp -r publish/civicrm/php7.3/idea/wmff/dotidea build/wmff/.idea
-cp -r publish/civicrm/php7.3/idea/dmaster/dotidea build/dmaster/web/sites/all/modules/civicrm/.idea
+cp -r civicrm/idea/wmff/dotidea build/wmff/.idea
+cp -r civicrm/idea/dmaster/dotidea build/dmaster/web/sites/all/modules/civicrm/.idea
 
 ```
 This creates a useful exec alias - note it uses the path I have (ie. with the 
